@@ -4,16 +4,17 @@ import styled from 'styled-components';
 import 'leaflet/dist/leaflet.css'
 
 const MapWrapper = styled(Map)`
-  height: 700px;
+  height: 845px;
   width: 60%;
   margin: 0 auto;
 `;
 
-function Maps() {
+const Maps = props => {
+  console.log('Ville reçu par map =>', props.selectedCity)
   return (
     <MapWrapper
-      center={[49.8419, 24.0315]} 
-      zoom={12} 
+      center={[40.7127837, -74.0059413]} 
+      zoom={11} 
     >
       <TileLayer
         attribution='&amp;copy <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors'
