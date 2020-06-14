@@ -3,9 +3,8 @@ import styled from 'styled-components';
 import Card from './Card';
 
 const ListWrapper = styled.div`
-    border: 1px solid black;
-    width: 30%;
     height: 850px;
+    padding: 10px;
     overflow-y: scroll;
     overflow-x: hidden;
 `
