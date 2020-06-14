@@ -1,20 +1,21 @@
 import React from 'react';
 import styled from 'styled-components';
+import Card from './Card';
 
 const ListWrapper = styled.div`
-  border: 1px solid black;
-  width: 30%;
-height: 850px;
-overflow-y: scroll;
-overflow-x: hidden;
+    border: 1px solid black;
+    width: 30%;
+    height: 850px;
+    overflow-y: scroll;
+    overflow-x: hidden;
 `
 
-const ListItem = props => {
-    const {cities} = props
-   
+const List = props => {
+    const {cities, handleClick} = props
+   console.log(cities)
     return (
         <ListWrapper >
-            <h1>{cities.map(city => <h1>{city.city}</h1>)}</h1>
+           {cities.map(city => <Card key={city.rank} cityData={city} handleClick={handleClick}/>)}
         </ListWrapper>
     );
 }
