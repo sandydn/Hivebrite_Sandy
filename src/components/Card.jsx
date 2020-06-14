@@ -11,7 +11,7 @@ const CardStyle = styled.button`
 `
 
 const Card = props => {
-    const {cityData: { city, state, latitude, longitude, rank }, handleClick} = props
+    const {cityData: { city, state, rank }, handleClick} = props
     return (
         <CardStyle onClick={() => handleClick(rank)}>
             <h1>{city}</h1>

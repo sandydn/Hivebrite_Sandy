@@ -12,7 +12,6 @@ const ListWrapper = styled.div`
 
 const List = props => {
     const {cities, handleClick} = props
-   console.log(cities)
     return (
         <ListWrapper >
            {cities.map(city => <Card key={city.rank} cityData={city} handleClick={handleClick}/>)}

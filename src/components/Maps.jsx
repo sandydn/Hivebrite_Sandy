@@ -1,7 +1,6 @@
 import React from 'react';
-import { Map, TileLayer } from 'react-leaflet'
+import { Map, TileLayer,  Marker, Popup } from 'react-leaflet';
 import styled from 'styled-components';
-import 'leaflet/dist/leaflet.css'
 
 const MapWrapper = styled(Map)`
   height: 845px;
@@ -9,17 +8,32 @@ const MapWrapper = styled(Map)`
   margin: 0 auto;
 `;
 
+
 const Maps = props => {
-  console.log('Ville reçu par map =>', props.selectedCity)
+const { selectedCity } = props;
+const cityObject = selectedCity[0]
+const {
+  city, 
+  growth_from_2000_to_2013, 
+  latitude, 
+  longitude, 
+  population, 
+  state
+} = cityObject
+const position = [latitude, longitude]
+
   return (
     <MapWrapper
-      center={[40.7127837, -74.0059413]} 
+      center={position} 
       zoom={11} 
     >
       <TileLayer
         attribution='&amp;copy <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors'
         url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
       />
+      <Marker position={position}>
+        <Popup>🌃 {city} <br /> 👥 {population}  <br /> </Popup>
+      </Marker>
     </MapWrapper>
   )
 }
