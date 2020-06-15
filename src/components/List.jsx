@@ -6,7 +6,7 @@ const ListWrapper = styled.div`
     height: 630px;
     overflow-y: scroll;
     overflow-x: hidden;
-`
+`;
 
 const ButtonMore = styled.button`
     position: absolute;
@@ -20,13 +20,14 @@ const ButtonMore = styled.button`
 `;
 
 const List = props => {
-    const {cities, handleClick, handleMore} = props
+    const {cities, handleClick, handleMore} = props;
+
     return (
         <ListWrapper >
-           {cities.map(city => <Card key={city.rank} cityData={city} handleClick={handleClick}/>)}
+                {cities.map(city => <Card key={city.rank} cityData={city} handleClick={handleClick}/>)}
            <ButtonMore onClick={handleMore}>Shom Me More</ButtonMore>
         </ListWrapper>
     );
-}
+};
 
 export default List;
