@@ -3,24 +3,18 @@ import { Map, TileLayer,  Marker, Popup } from 'react-leaflet';
 import styled from 'styled-components';
 
 const MapWrapper = styled(Map)`
-  height: 845px;
+  height: 630px;
   width: 80%;
   box-shadow: 10px 0px 15px rgba(0, 0, 0, 0.37);
 `;
 
-
 const Maps = props => {
-const { data, selectedCity : {
+const { zoom, data, selectedCity : {
   city, 
-  growth_from_2000_to_2013, 
   latitude, 
   longitude, 
-  population, 
-  state
 }} = props;
 const selectedCityPosition = [latitude, longitude]
-const zoom = 4;
-console.log(data)
 
   return (
     <MapWrapper
