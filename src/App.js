@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect } from 'react';
 import styled from 'styled-components';
 import Map from './components/Maps.jsx';
 import List from './components/List.jsx';
@@ -34,17 +34,31 @@ const [selectedCity, setSelectedCity] = useState({
   state: "New York",
 });
 
+const [zoom, setZoom] = useState(4) 
+
 const handleSelectCity = (id) => {
   const selected = data.filter(city => city.rank === id)
   setSelectedCity(selected[0])
+  setZoom(11)
+}
+
+const [displayCities, setDisplayCities] = useState(data)
+const [counter, setCounter] = useState(3)
+
+useEffect(() => {
+  setDisplayCities(data.filter(city => city.rank <= counter))
+}, [counter]);
+
+const handleMore = () => {
+  setCounter(counter + 10)
 }
 
   return (
     <MainWrapper>
       <NavBar />
       <Content>
-        <List cities={data} handleClick={handleSelectCity}/>
-        <Map selectedCity={selectedCity} data={data}/>
+        <List cities={displayCities} handleClick={handleSelectCity} handleMore={handleMore}/>
+        <Map selectedCity={selectedCity} data={displayCities} zoom={zoom}/>
       </Content>
     </MainWrapper>
   )
