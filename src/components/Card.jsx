@@ -1,6 +1,19 @@
 import React from 'react';
 import styled from 'styled-components';
 
+const CardStyle = styled.div`
+    width: 215px;
+    height: 110px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    margin: 34px auto;
+    background: #ebf1f5;
+    box-shadow: 2px 9px 20px rgba(0,0,0,0.1);
+    cursor: pointer;
+`;
+
 const Column = styled.div`
     display: flex;
     flex-direction: column;
@@ -24,20 +37,6 @@ const CityState = styled.h3`
     font-size: .8em;
 `;
 
-
-const CardStyle = styled.div`
-    width: 215px;
-    height: 110px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    margin: 34px auto;
-    background: #ebf1f5;
-    box-shadow: 2px 9px 20px rgba(0,0,0,0.1);
-    cursor: pointer;
-`;
-
 const Icon = styled.img`
     width: 20px;
     height: 20px;
@@ -49,7 +48,14 @@ const NumberItem = styled.h3`
 `;
 
 const Card = props => {
-    const {cityData: { city, state, rank, growth_from_2000_to_2013, population }, handleClick} = props
+    const {cityData: { 
+        city, 
+        state, 
+        rank, 
+        growth_from_2000_to_2013, 
+        population 
+    }, handleClick} = props;
+    
     return (
         <CardStyle onClick={() => handleClick(rank)}>
             <Column>
@@ -68,6 +74,6 @@ const Card = props => {
             </Column>
         </CardStyle>
     );
-}
+};
 
 export default Card;
