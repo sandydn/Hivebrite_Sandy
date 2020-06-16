@@ -3,13 +3,14 @@ import styled from 'styled-components';
 
 const CardStyle = styled.div`
     width: 215px;
-    height: 110px;
+    height: 100px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    margin: 34px auto;
-    background: #ebf1f5;
+    margin: 25px 45px 0px 3px;
+    background: ${props => props.isSelected ? '#d2ebfa' : '#ebf1f5'};
+    border: ${props => props.isSelected && '.5px solid #8baee6'};
     box-shadow: 2px 9px 20px rgba(0,0,0,0.1);
     cursor: pointer;
 `;
@@ -54,10 +55,11 @@ const Card = props => {
         rank, 
         growth_from_2000_to_2013, 
         population 
-    }, handleClick} = props;
-    
+    }, selectedCity, handleClick} = props;
+     const isSelected = selectedCity.rank === rank ? true : false;
+
     return (
-        <CardStyle onClick={() => handleClick(rank)}>
+        <CardStyle onClick={() => handleClick(rank)} isSelected={isSelected}>
             <Column>
                 <CityName>{city}</CityName>
                 <CityState>{state}</CityState>
