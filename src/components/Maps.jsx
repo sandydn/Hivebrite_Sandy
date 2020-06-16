@@ -4,7 +4,7 @@ import { Icon } from "leaflet";
 import { Map, TileLayer,  Marker, Popup } from 'react-leaflet';
 
 const MapWrapper = styled(Map)`
-  height: 630px;
+  height: 510px;
   width: 80%;
   margin: 0px 15px;
   box-shadow: 10px 0px 15px rgba(0, 0, 0, 0.37);
