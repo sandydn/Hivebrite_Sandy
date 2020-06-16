@@ -44,6 +44,13 @@ const Content = styled.div`
   justify-content: space-around;
 `;
 
+const SubText = styled.p`
+  font-size: .5rem;
+  display: flex;
+  justify-content: center;
+  font-family: 'Raleway', sans-serif;
+`;
+
 const App = () => {
   const [selectedCity, setSelectedCity] = useState({
     city: "New York",
@@ -80,19 +87,22 @@ const App = () => {
   };
 
   return (
-    <MainWrapper>
-      <NavBar>
-        <SearchBar handleSearch={handleSearch}/>
-        <TitleWrapper>
-          <Title>American Population Growth</Title>
-          <Logo src={logo} alt="Population Growth Clipart@pngkey.com"/>
-        </TitleWrapper>
-      </NavBar>
-      <Content>
-        <List cities={displayCities} handleClick={handleSelectCity} handleMore={handleMore}/>
-        <Map selectedCity={selectedCity} data={displayCities} zoom={zoom}/>
-      </Content>
-    </MainWrapper>
+    <>
+      <MainWrapper>
+        <NavBar>
+          <SearchBar handleSearch={handleSearch}/>
+          <TitleWrapper>
+            <Title>American Population Growth</Title>
+            <Logo src={logo} alt="Population Growth Clipart@pngkey.com"/>
+          </TitleWrapper>
+        </NavBar>
+        <Content>
+          <List cities={displayCities} selectedCity={selectedCity} handleClick={handleSelectCity} handleMore={handleMore}/>
+          <Map selectedCity={selectedCity} data={displayCities} zoom={zoom}/>
+        </Content>
+      </MainWrapper>
+       <SubText>&copy; create with &#10084; by Sandy</SubText>
+    </>
   );
 };
 
