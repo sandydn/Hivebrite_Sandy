@@ -10,7 +10,7 @@ const ListWrapper = styled.div`
 
 const ButtonMore = styled.button`
     position: absolute;
-    bottom: 10px;
+    bottom: 20px;
     font-size: 1em;
     margin: 0em 2.95em;
     padding: 0.15em 1em;
@@ -19,12 +19,30 @@ const ButtonMore = styled.button`
     color: #84a3d6;
 `;
 
+const CardNotFound = styled.div`
+    width: 215px;
+    padding: 20px;
+    margin: 25px 45px 0px 3px;
+`;
+
+const TextNotFound = styled.h2`
+    margin: 10px 25px;
+    font-size: 1.1rem;
+    width: 140px;
+`;
+
 const List = props => {
-    const {cities, handleClick, handleMore} = props;
+    const {cities, selectedCity, handleClick, handleMore} = props;
 
     return (
         <ListWrapper >
-                {cities.map(city => <Card key={city.rank} cityData={city} handleClick={handleClick}/>)}
+                {cities.length > 0 ? 
+                    cities.map(city => <Card key={city.rank} cityData={city} selectedCity={selectedCity} handleClick={handleClick}/>)
+                    :
+                    <CardNotFound>
+                        <TextNotFound>Oops not found ...</TextNotFound>
+                    </CardNotFound>
+                }
            <ButtonMore onClick={handleMore}>Shom Me More</ButtonMore>
         </ListWrapper>
     );
