@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import Card from './Card';
 
 const ListWrapper = styled.div`
-    height: 630px;
+    height: 510px;
     overflow-y: scroll;
     overflow-x: hidden;
 `;
