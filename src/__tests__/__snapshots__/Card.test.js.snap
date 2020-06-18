@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card Should pass on start. Should render correctly. 1`] = `
+<div
+  className="sc-AxjAm jgLRTK"
+  data-jest="card"
+  onClick={[Function]}
+>
+  <div
+    className="sc-AxirZ eTxVFc"
+  >
+    <h2
+      className="sc-AxhCb jAlGnI"
+    >
+      New York
+    </h2>
+    <h3
+      className="sc-AxhUy jSGLIL"
+    >
+      New York
+    </h3>
+  </div>
+  <div
+    className="sc-AxirZ eTxVFc"
+  >
+    <div
+      className="sc-AxiKw kKjxUC"
+    >
+      <img
+        alt="population"
+        className="sc-AxgMl jLPpZy"
+        src="https://img.icons8.com/fluent/25/000000/conference-call.png"
+      />
+      <h3
+        className="sc-AxheI kLPUmH"
+      >
+        8405837
+      </h3>
+    </div>
+    <div
+      className="sc-AxiKw kKjxUC"
+    >
+      <img
+        className="sc-AxgMl jLPpZy"
+        src="https://img.icons8.com/fluent/35/000000/up.png"
+      />
+      <h3
+        className="sc-AxheI kLPUmH"
+      >
+        4.8%
+      </h3>
+    </div>
+  </div>
+</div>
+`;
