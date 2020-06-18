@@ -43,7 +43,7 @@ const List = props => {
                         <TextNotFound>Oops not found ...</TextNotFound>
                     </CardNotFound>
                 }
-           <ButtonMore onClick={handleMore}>Shom Me More</ButtonMore>
+           <ButtonMore data-jest='button-more' onClick={handleMore}>Shom Me More</ButtonMore>
         </ListWrapper>
     );
 };
