@@ -59,18 +59,22 @@ const Card = props => {
      const isSelected = selectedCity.rank === rank ? true : false;
 
     return (
-        <CardStyle onClick={() => handleClick(rank)} isSelected={isSelected}>
+        <CardStyle data-jest='card' onClick={() => handleClick(rank)} isSelected={isSelected}>
             <Column>
                 <CityName>{city}</CityName>
                 <CityState>{state}</CityState>
             </Column>
             <Column>
                 <Item>
-                    <Icon src="https://img.icons8.com/fluent/25/000000/conference-call.png"/>
+                    <Icon src="https://img.icons8.com/fluent/25/000000/conference-call.png" alt='population'/>
                     <NumberItem>{population}</NumberItem>
                 </Item>
                 <Item>
-                <Icon src={growth_from_2000_to_2013.includes('-') ? "https://img.icons8.com/fluent/35/000000/down.png" : "https://img.icons8.com/fluent/35/000000/up.png"}/>
+                    <Icon 
+                        src={growth_from_2000_to_2013.includes('-') ? 
+                            "https://img.icons8.com/fluent/35/000000/down.png" : 
+                            "https://img.icons8.com/fluent/35/000000/up.png"}
+                    />
                     <NumberItem>{growth_from_2000_to_2013}</NumberItem>
                 </Item>
             </Column>

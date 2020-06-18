@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchBar Should pass on start. Should render correctly. 1`] = `
+<div
+  className="sc-AxjAm bnZBsp"
+>
+  <img
+    alt="search-icon"
+    src="SearchIcon.svg"
+  />
+  <input
+    className="sc-AxirZ hMBrHq"
+    onChange={[Function]}
+    placeholder="Enter a city name"
+    type="text"
+  />
+</div>
+`;

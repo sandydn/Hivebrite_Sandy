@@ -87,7 +87,7 @@ const App = () => {
   };
 
   return (
-    <>
+    <div>
       <MainWrapper>
         <NavBar>
           <SearchBar handleSearch={handleSearch}/>
@@ -102,7 +102,7 @@ const App = () => {
         </Content>
       </MainWrapper>
        <SubText>&copy; create with &#10084; by Sandy</SubText>
-    </>
+    </div>
   );
 };
 
